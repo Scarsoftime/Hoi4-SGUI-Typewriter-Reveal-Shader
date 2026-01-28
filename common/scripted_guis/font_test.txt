@@ -10,10 +10,8 @@ scripted_gui = {
 			cover_click_enabled = {
 				has_country_flag = start_typing
 			}
-			cover_true_visible = {
-				NOT = {
-					has_country_flag = start_typing
-				}
+			text_visible = {
+				has_country_flag = start_typing
 			}
 		}
 		effects = {
