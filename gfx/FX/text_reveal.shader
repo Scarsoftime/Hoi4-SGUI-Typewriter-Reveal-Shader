@@ -48,19 +48,15 @@ PixelShader =
 	[[
 		float4 main( VS_OUTPUT v ) : PDX_COLOR
 		{
-			// Put the frame information as XXYYY
-			// X is the number of characters per line
-			// Y is the number of lines
+			// Put the frame information as the number of lines
+			// For example, 19 lines will be `frame = 19`
 
-			// For example, 19 lines with 27 characters per line will be `frame = 19027`
-
-			float charactersPerLine = mod(Offset.x,1000) + 1;
-			float numberOfLines = floor(Offset.x/1000);
+			float numberOfLines = Offset.x + 1;
 			float linesPerSecond = 1.5;
 
 			float vTime = (Time - AnimationTime) * linesPerSecond;
 			float yRoundedTime = ceil(vTime)/numberOfLines;
-			float xRoundedTime = vTime*charactersPerLine/charactersPerLine - floor(v.vTexCoord.y*numberOfLines);
+			float xRoundedTime = vTime - floor(v.vTexCoord.y*numberOfLines);
 			
 			if(v.vTexCoord.x <= xRoundedTime && v.vTexCoord.y <= yRoundedTime){
 				return float4(0.0, 0.0, 0.0, 0.0);
