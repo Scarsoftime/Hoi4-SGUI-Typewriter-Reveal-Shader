@@ -1,4 +1,4 @@
-# Typewriter text reveal by Scars
+# Wipe text reveal by Scars
 
 Includes = {
 	"buttonstate.fxh"
@@ -56,11 +56,11 @@ PixelShader =
 
 			float charactersPerLine = mod(Offset.x,1000) + 1;
 			float numberOfLines = floor(Offset.x/1000);
-			float linesPerSecond = 0.4;
+			float linesPerSecond = 1.5;
 
 			float vTime = (Time - AnimationTime) * linesPerSecond;
 			float yRoundedTime = ceil(vTime)/numberOfLines;
-			float xRoundedTime = floor(vTime*charactersPerLine)/charactersPerLine - floor(v.vTexCoord.y*numberOfLines);
+			float xRoundedTime = vTime*charactersPerLine/charactersPerLine - floor(v.vTexCoord.y*numberOfLines);
 			
 			if(v.vTexCoord.x <= xRoundedTime && v.vTexCoord.y <= yRoundedTime){
 				return float4(0.0, 0.0, 0.0, 0.0);
