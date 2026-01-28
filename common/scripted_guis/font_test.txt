@@ -1,0 +1,33 @@
+scripted_gui = {
+	typewriter_test_gui = {
+		window_name = typewriter_test_gui
+		context_type = player_context
+		visible = { always = yes }
+		triggers = {
+			cover_visible = {
+				has_country_flag = start_typing
+			}
+			cover_click_enabled = {
+				has_country_flag = start_typing
+			}
+			cover_true_visible = {
+				NOT = {
+					has_country_flag = start_typing
+				}
+			}
+		}
+		effects = {
+			toggle_click = {
+				if = {
+					limit = {
+						has_country_flag = start_typing
+					}
+					clr_country_flag = start_typing
+				}
+				else = {
+					set_country_flag = start_typing
+				}
+			}
+		}
+	}
+}

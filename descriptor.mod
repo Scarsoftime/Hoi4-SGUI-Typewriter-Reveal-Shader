@@ -1,0 +1,3 @@
+name="Scripted GUI Typewriter Reveal"
+supported_version="1.17.*"
+path="mod/Hoi4-SGUI-Typewriter-Reveal-Shader"

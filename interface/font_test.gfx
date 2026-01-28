@@ -1,0 +1,20 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_font_test_cover"
+		texturefile = "gfx/interface/font_test/cover.png"
+		effectFile = "gfx/FX/type_reveal.shader"
+	}
+	spriteType = {
+		name = "GFX_font_test_cover_true"
+		texturefile = "gfx/interface/font_test/cover.png"
+	}
+}
+
+bitmapfonts = {
+	bitmapfont = {
+		name = "mono_typewriter16"
+		path = "gfx/fonts/mono_typewriter16"
+		color = 0xffffffff
+		textcolors = { }
+	}
+}
